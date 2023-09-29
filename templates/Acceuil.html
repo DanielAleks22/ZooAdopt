@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <link rel="stylesheet" type="text/css" href="/style.css">
+            <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+            <meta charset="utf-8">
+            <title>Acceuil</title>
+        </head>
+        <body>
+        
+            <header class="hautpage">
+                <h1><img src="/img/logo.png" alt="">ZooAdopt</h1>
+            </header>
+            
+            <nav class="barnavigation">
+                <a class="courant" href="/Acceuil.html">Acceuil</a>
+                <a href="/MiseAdoption.html">Mise en adoption</a>
+                <a href="/AnimauxDisponible.html">Animaux disponible</a>
+            </nav>
+
+            <div class ="introduction">
+                <input type="checkbox" id="titre">
+                <label for="titre">
+                    Devenez la nouvelle famille d'un ame pure 
+                </label>
+                                      
+                <div class="contenu">
+                    <p>
+                       Adopter un animal ou mettez en adoption votre animal!
+                    </p> 
+                </div>   
+            </div>
+
+            
+
+
+            <div class="maincontenu">
+            
+            	<div class="barrecherche">
+                	<form id="rechercheanimal" action="/query" method="GET">
+                		<label for="recherche">Recherche rapide pour votre nouveau compagnon </label><br>
+                		<input id="recherche" type="text" name="q"><br>
+                		<button onclick="submitQuery()">Soumettre</button>
+                	</form>
+
+                </div>
+            
+            	<div class="animauxrandom">
+            		<h1>Quelques animaux disponibles, pour la liste complete <a href="/AnimauxDisponible.html">cliquez ici</a>.</h1>
+            		<div class="animal">
+            			<p>
+            				{{liste[0]['nom']}}<br>
+            				{{liste[0]['espece']}}<br>
+            				{{liste[0]['race']}}<br>
+            			</p>
+            				<form class="creerpageanimal" action="/creerPage" method="POST">
+            					<input type="hidden" name="idanimal" class="idanimal" value="{{liste[0]['id']}}">
+            					<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            				</form>
+            		</div>
+            		
+            		<div class="animal">
+            			<p>
+            				{{liste[1]['nom']}}<br>
+            				{{liste[1]['espece']}}<br>
+            				{{liste[1]['race']}}<br>
+            			</p>
+            			<form class="creerpageanimal" action="/creerPage" method="POST">
+            				<input type="hidden" name="idanimal" class="idanimal" value="{{liste[1]['id']}}">
+            				<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            			</form>
+            			
+            		</div>
+            		
+            		<div class="animal">
+            			<p>
+            				{{liste[2]['nom']}}<br>
+            				{{liste[2]['espece']}}<br>
+            				{{liste[2]['race']}}<br>
+            			</p>
+            			<form class="creerpageanimal" action="/creerPage" method="POST">
+            				<input type="hidden" name="idanimal" class="idanimal" value="{{liste[2]['id']}}">
+            				<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            			</form>
+            			
+            		</div>
+            		
+            		<div class="animal">
+            			<p>
+            				{{liste[3]['nom']}}<br>
+            				{{liste[3]['espece']}}<br>
+            				{{liste[3]['race']}}<br>
+            			</p>
+            			<form class="creerpageanimal" action="/creerPage" method="POST">
+            				<input  type="hidden" name="idanimal" class="idanimal" value="{{liste[3]['id']}}">
+            				<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            			</form>
+            			
+            		</div>
+            		
+            		<div class="animal">
+            			<p>
+            				{{liste[4]['nom']}}<br>
+            				{{liste[4]['espece']}}<br>
+            				{{liste[4]['race']}}<br>
+            			</p>
+            			<form class="creerpageanimal" action="/creerPage" method="POST">
+            				<input type="hidden" name="idanimal" class="idanimal" value="{{liste[4]['id']}}">
+            				<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            			</form>
+            			
+            		</div>
+            		
+            		
+            	</div>
+                
+            </div>
+            
+
+            <footer class="basPage">
+                <p> © 2022 ZooAdopt droits réservés</p>
+            </footer>
+
+        </body>
+    </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <link rel="stylesheet" type="text/css" href="/style.css">
+            <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+            <meta charset="utf-8">
+            <title>Animal</title>
+        </head>
+        <body>
+            <header class="hautpage">
+                <h1><img src="/img/logo.png" alt="">ZooAdopt</h1>
+            </header>
+            
+            <nav class="barnavigation">
+                <a href="/Acceuil.html">Acceuil</a>
+                <a href="/MiseAdoption.html">Mise en adoption</a>
+                <a class="courant" href="/AnimauxDisponible.html">Animaux disponible</a>
+            </nav>
+
+            <div class ="introduction">
+                <input type="checkbox" id="titre">
+                <label for="titre">
+                    Liste complète des animaux disponibles pour adoption
+                </label>
+                                      
+                <div class="contenu">
+                    <p>
+                         Si vous souhaitez mettre un animal pour adoption veuillez <a href="/MiseAdoption.html">cliquez ici</a>.
+                    </p> 
+                </div>   
+            </div>
+
+            <div class="maincontenu">
+                <div class="listeanimaux">
+            		
+            			{%for animal in listetotale%}
+            				<div class="animal">
+            					<p>{{animal['nom']}}</p><br>
+            					<p>{{animal['espece']}}</p><br>
+            
+            					<form class="creerpageanimal" action="/creerPage" method="POST">
+            						<input type="hidden" name="idanimal" class="idanimal" value="{{animal['id']}}">
+            						<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            					</form><br>
+            				</div>
+            			
+            			{% endfor %}
+            		
+            	</div>
+            </div>
+
+                   
+            <footer class="basPage">
+                <p> © 2022 ZooAdopt droits réservés</p>
+            </footer>
+
+
+        </body>
+    </html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <link rel="stylesheet" type="text/css" href="/style.css">
+            <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+            <meta charset="utf-8">
+            <title>MiseAdoption</title>
+        </head>
+        <body>
+            <header class="hautpage">
+                <h1><img src="/img/logo.png" alt="">ZooAdopt</h1>
+            </header>
+
+            <nav class="barnavigation">
+                <a href="/Acceuil.html">Acceuil</a>
+                <a class="courant" href="/MiseAdoption.html">Mise en adoption</a>
+                <a href="/AnimauxDisponible.html">Animaux disponible</a>
+            </nav>
+
+
+            <div class ="introduction">
+                <input type="checkbox" id="titre">
+                <label for="titre">
+                    Vous souhaitez mettre un animal en adoption?
+                </label>
+                                      
+                <div class="contenu">
+                    <p>
+                         Remplissez le formulaire plus-bas et nous nous occupons du reste!
+                     </p> 
+                </div>   
+            </div>
+
+            <div class="maincontenu">
+                <div id="commandeform">
+                	<h1>Inscrivez un animal</h1>
+                	<form id="adoptionform" action='/envoyer' method="post">
+                    	<h3>Completez les champs suivants</h3>
+                    	<label for="nomanimal">Nom de l'animal : </label>
+                    	<input type="text" name="nomanimal" id="nomanimal" size="50">
+                    	<p id="erreurnom"></p>
+	
+                    	<label for="especeanimal">L'espèce de l'animal: </label>
+                    	<input type="text" name="especeanimal" id="especeanimal" size="50">
+                    	<p id="erreurespece"></p>
+	
+                    	<label for="raceanimal">Race de l'animal : </label>
+                    	<input type="text" name="raceanimal" id="raceanimal" size="50">
+                    	<p id="erreurrace"></p>
+	
+                    	<label for="ageanimal">Âge de l'animal : </label>
+                    	<input type="text" name="ageanimal" id="ageanimal" size="10">
+                    	<p id="erreurage"></p>
+                    	
+                    	<label for="descriptionanimal">
+                    		Une courte description de l'animal
+                    	</label><br>
+                    	<textarea id="descriptionanimal" name="descriptionanimal"></textarea><br>
+                    	<p id="erreurdescription"></p>
+	
+                    	<label for="email">Courriel pour vous contacter : </label>
+                    	<input type="text" id="email" name="email" size="100"><br>
+                    	<p id="erreuremail"></p>
+                    	
+                    	<h3>Adresse ou l'on peut recuperer l'animal </h3>
+                    	
+                    	<label for="adressecivique">Adresse civique : </label>
+                    	<input type="text" name="adressecivique" id="adressecivique" size="50">
+                    	<p id="erreuradresse"></p>
+                    	
+                    	<label for="ville">Ville : </label>
+                    	<input type="text" name="ville" id="ville" size="50">
+                    	<p id="erreurville"></p>
+                    	
+                    	<label for="codepostal">Code postal : </label>
+                    	<input type="text" name="codepostal" id="codepostal" size="20">
+                    	<p id="erreurcp"></p>
+                    	
+                    	<button type="reset">Vider</button>
+                    	<button type="button" onclick="validation()">Soumettre</button>
+                	</form>
+            	</div>
+            </div>
+
+            <script src="/script.js"></script>
+                   
+            <footer class="basPage">
+                <p> © 2022 ZooAdopt droits réservés</p>
+            </footer>
+
+
+        </body>
+    </html>

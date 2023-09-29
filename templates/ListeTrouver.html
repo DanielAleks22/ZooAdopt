@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <link rel="stylesheet" type="text/css" href="/style.css">
+            <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+            <meta charset="utf-8">
+            <title>ListeTrouver</title>
+        </head>
+        <body>
+            <header class="hautpage">
+                <h1><img src="/img/logo.png" alt="">ZooAdopt</h1>
+            </header>
+            
+            <nav class="barnavigation">
+                <a href="/Acceuil.html">Acceuil</a>
+                <a href="/MiseAdoption.html">Mise en adoption</a>
+                <a href="/AnimauxDisponible.html">Animaux disponible</a>
+                <a class="courant" >Animaux trouver</a>
+            </nav>
+
+            <div class ="introduction">
+                <input type="checkbox" id="titre">
+                <label for="titre">
+                    Resultat recherche
+                </label>
+                                      
+                <div class="contenu">
+                    <p>
+                         Voici les resultats de votre recherche
+                     </p> 
+                </div>   
+            </div>
+
+            <div class="maincontenu">
+                <div class="listeanimaux">
+                
+                	{% if bool %}
+                		{% for animal in animaux %}
+                		<div class="animal">
+            				<p>{{animal['nom']}}</p><br>
+            				<p>{{animal['espece']}}</p><br>
+            
+            				<form id="creerpageanimal" action="/creerPage" method="POST">
+            					<input type="hidden" name="idanimal" id="idanimal" value="{{animal['id']}}">
+            					<button onclick="submitPageRespective()">Page respective de l'animal</button>
+            				</form><br>
+            			</div>
+                		{% endfor %}
+                	{% else  %}
+                		<div id="pasresultat">
+                			<h1>{{erreur}}</h1>
+                		</div>
+                			
+                	{% endif %}	
+                </div>
+            </div>
+
+                   
+            <footer class="basPage">
+                <p> © 2022 ZooAdopt droits réservés</p>
+            </footer>
+
+
+        </body>
+    </html>

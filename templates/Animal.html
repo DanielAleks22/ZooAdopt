@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <link rel="stylesheet" type="text/css" href="/style.css">
+            <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+            <meta charset="utf-8">
+            <title>Animal</title>
+        </head>
+        <body>
+            <header class="hautpage">
+                <h1><img src="/img/logo.png" alt="">ZooAdopt</h1>
+            </header>
+
+            <nav class="barnavigation">
+                <a href="/Acceuil.html">Acceuil</a>
+                <a href="/MiseAdoption.html">Mise en adoption</a>
+                <a href="/AnimauxDisponible.html">Animaux disponible</a>
+                <a class="courant" >Animal choisi</a>
+            </nav>
+
+            <div class ="introduction">
+                <input type="checkbox" id="titre">
+                <label for="titre">
+                    {{animal['nom']}}
+                </label>
+                                      
+                <div class="contenu">
+                    <p>
+                         {{animal['description']}}
+                     </p> 
+                </div>   
+            </div>
+
+            <div class="maincontenu">
+                <div class="afficheranimal">
+                	<p id="nom">{{animal['nom']}}</p>
+                	<p id="espece">Espece:<br> {{animal['espece']}}</p>
+                	<p id="race">Race:<br> {{animal['race']}}</p>
+                	<p id="age">Âge:<br> {{animal['age']}}</p>
+                	<p id="desc">Description:<br> {{animal['description']}}</p>
+                	<p id="addr">Adresse civique:<br> {{animal['adresse']}}</p>
+                	<p id="villeprop">Ville:<br> {{animal['ville']}}</p>
+                	<p id="cpprop">Code postal:<br> {{animal['cp']}}</p>
+                	<p id="mail">
+                		<a href="mailto:{{animal['courriel']}}">Contactez le proprietaire</a>
+                	</p>
+                </div>
+            </div>
+
+                   
+            <footer class="basPage">
+                <p> © 2022 ZooAdopt droits réservés</p>
+            </footer>
+
+
+        </body>
+    </html>
